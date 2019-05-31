@@ -27,7 +27,6 @@
         insertafter: "<body>"
         content: |
           <h1>BCNDEVOPS - {{ansible_hostname}}</h1>
-          <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
         become: yes
 
     - name: httpd is started
