@@ -22,6 +22,7 @@
       blockinfile:
         dest: /var/www/html/index.html
         create: yes
+        marker: " "
         insertafter: "<p></p>"
         content: |
           <h1>BCNDEVOPS - {{ansible_hostname}}</h1>
