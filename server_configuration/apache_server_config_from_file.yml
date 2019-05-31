@@ -1,6 +1,7 @@
 ---
 - name: Install and configure Apache HTTPD
   hosts: all
+  gather_facts: no
   vars:
     index_message: "This is your new apache server"
     index_image: ""
