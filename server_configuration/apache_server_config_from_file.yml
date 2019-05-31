@@ -22,8 +22,7 @@
       blockinfile:
         dest: /var/www/html/index.html
         create: yes
-        marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
-        insertafter: "<body>"
+        insertafter: "<p></p>"
         content: |
           <h1>BCNDEVOPS - {{ansible_hostname}}</h1>
           <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
