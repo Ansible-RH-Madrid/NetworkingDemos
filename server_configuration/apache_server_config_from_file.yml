@@ -15,7 +15,7 @@
 
     - name: copy index file to host 
       copy:
-        source: "{{ configuration_file }}"
+        src: "{{ configuration_file }}"
         dest: /var/www/html/index.html
 
     - name: httpd is started
