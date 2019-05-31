@@ -4,7 +4,7 @@
   vars:
     index_message: "This is your new apache server"
     index_image: ""
-    configuration_file: configuration_files/index.j2
+    configuration_file: configuration_files/index.html
 
   tasks:
     - name: httpd package is present
