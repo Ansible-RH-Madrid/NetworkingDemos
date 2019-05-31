@@ -18,6 +18,16 @@
         src: "{{ configuration_file }}"
         dest: /var/www/html/index.html
       become: yes
+      
+    - name: correct index.html is present
+      blockinfile:
+        dest: /var/www/html/index.html
+        create: yes
+        marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+        insertafter: "<body>"
+        content: |
+          <h1>BCNDEVOPS - {{ansible_hostname}}</h1>
+          <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
 
     - name: httpd is started
       service:
