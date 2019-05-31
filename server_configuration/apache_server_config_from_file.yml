@@ -17,9 +17,11 @@
       copy:
         src: "{{ configuration_file }}"
         dest: /var/www/html/index.html
+      become: yes
 
     - name: httpd is started
       service:
         name: httpd
         state: restarted
         enabled: true
+      become: yes
