@@ -1,0 +1,13 @@
+---
+- name: Checks http connectivity to hosts
+  hosts: all
+  vars:
+    index_message: "This is your new apache server"
+    index_imag: ""
+
+  tasks:
+    - name: retrieve information from host 
+      uri: 
+        url: "http://{{ ansible_host }}:80"
+        validate_certs: no
+

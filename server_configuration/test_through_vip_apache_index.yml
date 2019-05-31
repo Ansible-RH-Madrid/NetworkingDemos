@@ -1,0 +1,27 @@
+---
+- name: Checks http connectivity and compares received content with file
+  hosts: localhost
+  vars:
+    index_message: "This is your new apache server"
+    vip: 
+    configuration_file: configuration_files/index.html
+
+  tasks:
+    - name: retrieve information from host 
+      uri: 
+        url: "http://{{ vip }}:80"
+        method: GET
+        return_content: yes
+        validate_certs: no
+      register: index
+
+    - name: copy returned content to file
+      copy:
+        content: "{{ index }}"
+        dest: /tmp/index_content.html
+
+    - name: compare file containing the content with saved apache index
+      shell: diff /tmp/index_content.html {{configuration_file}}
+      register: diff_result
+
+        
