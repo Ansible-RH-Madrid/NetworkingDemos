@@ -11,6 +11,7 @@
         url: "https://{{ ansible_hostname }}:80"
         method: GET
         return_content: yes
+        validate_certs: no
       register: index
 
     - name: httpd is started
