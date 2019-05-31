@@ -1,7 +1,6 @@
 ---
 - name: Install and configure Apache HTTPD
   hosts: all
-  gather_facts: no
   vars:
     index_message: "This is your new apache server"
     index_image: ""
@@ -27,6 +26,7 @@
         insertafter: "<body>"
         content: |
           <h1>BCNDEVOPS - {{ansible_hostname}}</h1>
+          <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
         become: yes
 
     - name: httpd is started
