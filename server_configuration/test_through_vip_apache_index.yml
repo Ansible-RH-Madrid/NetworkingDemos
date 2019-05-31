@@ -22,6 +22,7 @@
 
     - name: compare file containing the content with saved apache index
       shell: diff /tmp/index_content.html {{configuration_file}}
-      register: diff_result
-
+      register: diff_cmd
+      failed_when: diff_cmd.rc != 0 
+      #or diff_cmd.rc >= 2
         
