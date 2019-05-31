@@ -1,0 +1,20 @@
+---
+- name: Install and start Apache HTTPD
+  hosts: "{{ servers }}"
+  vars:
+    index_message: "This is your new apache server"
+    index_image: ""
+
+  tasks:
+    - name: httpd package is present
+      uri:
+        url: https://your.form.based.auth.example.com/dashboard.php
+        method: GET
+        return_content: yes
+      register: index
+
+    - name: httpd is started
+      service:
+        name: httpd
+        state: restarted
+        enabled: true
