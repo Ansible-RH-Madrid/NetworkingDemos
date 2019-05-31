@@ -6,9 +6,9 @@
     index_image: ""
 
   tasks:
-    - name: httpd package is present
-      uri:
-        url: "{{ ansible_hostname }}"
+    - name: retrieve information from host 
+      uri: 
+        url: "https://{{ ansible_hostname }}"
         method: GET
         return_content: yes
       register: index
