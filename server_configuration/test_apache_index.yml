@@ -8,7 +8,7 @@
   tasks:
     - name: retrieve information from host 
       uri: 
-        url: "https://{{ ansible_hostname }}:80"
+        url: "https://{{ ansible_host }}:80"
         method: GET
         return_content: yes
         validate_certs: no
