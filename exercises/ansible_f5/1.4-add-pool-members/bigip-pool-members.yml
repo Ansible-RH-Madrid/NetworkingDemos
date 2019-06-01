@@ -16,6 +16,6 @@
       name: "{{hostvars[item].inventory_hostname}}"
       host: "{{hostvars[item].ansible_host}}"
       port: "{{service_port}}"
-      pool: "http_pool"
+      pool: "{{service_pool}}"
       validate_certs: "no"
     loop: "{{ groups['webservers'] }}"

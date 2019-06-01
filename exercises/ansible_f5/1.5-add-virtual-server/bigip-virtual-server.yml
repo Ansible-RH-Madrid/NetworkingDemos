@@ -11,11 +11,12 @@
       user: "{{ansible_user}}"
       password: "{{ansible_ssh_pass}}"
       server_port: "8443"
-      name: "vip"
+      name: "{{ service_vip }}"
       destination: "{{private_ip}}"
-      port: "443"
+      port: "{{ service_port }}"
       enabled_vlans: "all"
-      all_profiles: ['http','clientssl','oneconnect']
-      pool: "http_pool"
+#      all_profiles: ['http','cliientssl','oneconnect']
+      all_profiles: ['http','oneconnect']
+      pool: "{{ service_pool }}"
       snat: "Automap"
       validate_certs: "no"
