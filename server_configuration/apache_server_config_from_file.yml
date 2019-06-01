@@ -16,7 +16,7 @@
         dest: "/var/www/{{ service_path }}/index.html"
       become: yes
       
-    - name: correct index.htm
+    - name: correct index.html
       blockinfile:
         dest: "/var/www/{{ service_path }}/index.html"
         create: yes
