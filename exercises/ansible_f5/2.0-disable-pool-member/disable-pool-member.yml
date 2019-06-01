@@ -39,9 +39,9 @@
     vars:
      query_string: "[?name=='{{pool_name}}'].members[*].name[]"
 
-  - pause:
-      prompt: "To disable a particular member enter member with format member_name:port \nTo disable all members of the pool enter 'all'"
-    register: member_name
+#  - pause:
+#      prompt: "To disable a particular member enter member with format member_name:port \nTo disable all members of the pool enter 'all'"
+#    register: member_name
 
   - name: Disable ALL pool members
     bigip_pool_member:
@@ -53,13 +53,13 @@
     loop: "{{bigip_facts.ltm_pools | json_query(query_string)}}"
     vars:
      query_string: "[?name=='{{pool_name}}'].members[*].name[]"
-    when: '"all" in member_name.user_input'
-
-  - name: Disable pool member {{member_name.user_input}}
-    bigip_pool_member:
-      provider: "{{provider}}"
-      state: "forced_offline"
-      name: "{{member_name.user_input.split(':')[0]}}"
-      pool: "{{pool_name}}"
-      port: "{{member_name.user_input.split(':')[1]}}"
-    when: '"all" not in member_name.user_input'
+#when: '"all" in member_name.user_input'
+#
+#  - name: Disable pool member {{member_name.user_input}}
+#    bigip_pool_member:
+#      provider: "{{provider}}"
+#      state: "forced_offline"
+#      name: "{{member_name.user_input.split(':')[0]}}"
+#      pool: "{{pool_name}}"
+#      port: "{{member_name.user_input.split(':')[1]}}"
+#    when: '"all" not in member_name.user_input'
