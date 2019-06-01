@@ -12,7 +12,7 @@
       user: "{{ansible_user}}"
       password: "{{ansible_ssh_pass}}"
       server_port: "8443"
-      state: "enabled"
+      state: "present"
       name: "{{hostvars[item].inventory_hostname}}"
       host: "{{hostvars[item].ansible_host}}"
       port: "{{service_port}}"
