@@ -15,17 +15,17 @@
     - name: copy index file to host 
       copy:
         src: "{{ configuration_file }}"
-        dest: /var/www/html/index.html
+        dest: "/var/www/{{ path }}/index.html"
       become: yes
       
     - name: correct index.htm
       blockinfile:
-        dest: /var/www/html/index.html
+        dest: "/var/www/{{ path }}/index.html"
         create: yes
         marker: " "
         insertafter: "<p></p>"
         content: |
-          <h1>BCNDEVOPS - {{ansible_hostname}}</h1>
+          <h1>BCNDEVOPS - {{ ansible_hostname }}</h1>
           <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
       become: yes
 
