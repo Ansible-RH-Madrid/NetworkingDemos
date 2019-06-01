@@ -8,6 +8,6 @@
   tasks:
     - name: retrieve information from host 
       uri: 
-        url: "http://{{ service_vip }}:{{ service_port }}"
+        url: "http://{{ service_public_ip }}:{{ service_port }}"
         validate_certs: no
 
