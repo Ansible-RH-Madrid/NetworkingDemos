@@ -8,6 +8,6 @@
   tasks:
     - name: retrieve information from host 
       uri: 
-        url: "http://{{ ansible_host }}:80"
+        url: "http://{{ service_vip }}:{{ service_port }}"
         validate_certs: no
 
