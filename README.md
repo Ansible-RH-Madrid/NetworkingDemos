@@ -1,2 +1,2 @@
 # NetworkingDemos
-Repo focus on demos for ansible networking use cases.
+Repo focused on demos for ansible networking use cases.
