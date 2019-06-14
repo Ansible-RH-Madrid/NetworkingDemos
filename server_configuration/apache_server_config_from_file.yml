@@ -23,7 +23,7 @@
         marker: " "
         insertafter: "<p></p>"
         content: |
-          <h1>Benvinguts al món de l'automatització - {{ ansible_hostname }}:{{ service_port }} - {{ service_level }}</h1>
+          <h1>Jornada Innovació - {{ ansible_hostname }}:{{ service_port }} - {{ service_level }}</h1>
           <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
       become: yes
 
