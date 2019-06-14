@@ -1,6 +1,6 @@
 ---
 - name: BIG-IP SETUP
-  hosts: lb
+  hosts: tag_lb
   connection: local
   gather_facts: false
 
