@@ -1,6 +1,6 @@
 ---
 - name: BIG-IP SETUP
-  hosts: tag_lb
+  hosts: lb
   connection: local
   gather_facts: false
 
@@ -15,4 +15,4 @@
       host: "{{hostvars[item].ansible_host}}"
       name: "{{hostvars[item].inventory_hostname}}"
       validate_certs: "no"
-    loop: "{{ groups['tag_webservers'] }}"
+    loop: "{{ groups['webservers'] }}"
