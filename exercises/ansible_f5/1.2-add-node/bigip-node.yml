@@ -15,4 +15,4 @@
       host: "{{hostvars[item].ansible_host}}"
       name: "{{hostvars[item].inventory_hostname}}"
       validate_certs: "no"
-    loop: "{{ groups['webservers'] }}"
+    loop: "{{ groups['tag_webservers'] }}"
